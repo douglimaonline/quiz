@@ -1,16 +1,16 @@
-import AnswerModel from './answer'
+import AnswerModel, { Answer } from './answer'
 
 export default class QuestionModel {
   #id: number
   #statement: string
   #answers: AnswerModel[]
-  #answeredCorrectly: boolean
+  #answeredCorrectly: boolean | undefined
 
   constructor(
     id: number,
     statment: string,
     answers: AnswerModel[],
-    answeredCorrectly: false
+    answeredCorrectly?: false
   ) {
     this.#id = id
     this.#statement = statment
@@ -33,4 +33,20 @@ export default class QuestionModel {
   get answered() {
     return this.#answers.reduce((acc, a) => acc || a.reveled, false)
   }
+
+  toObject() {
+    return {
+      id: this.#id,
+      statement: this.#statement,
+      answers: this.#answers.map((a) => a.toObject()),
+      answeredCorrectly: this.#answeredCorrectly,
+    }
+  }
+}
+
+export type Question = {
+  id: number
+  statement: string
+  answers: Answer[]
+  answeredCorrectly: boolean | undefined
 }
