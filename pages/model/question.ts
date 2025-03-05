@@ -1,13 +1,15 @@
+import AnswerModel from './answer'
+
 export default class QuestionModel {
   #id: number
   #statement: string
-  #answers: string[]
+  #answers: AnswerModel[]
   #answeredCorrectly: boolean
 
   constructor(
     id: number,
     statment: string,
-    answers: string[],
+    answers: AnswerModel[],
     answeredCorrectly: false
   ) {
     this.#id = id
@@ -27,5 +29,8 @@ export default class QuestionModel {
   }
   get answeredCorrectly() {
     return this.#answeredCorrectly
+  }
+  get answered() {
+    return this.#answers.reduce((acc, a) => acc || a.reveled, false)
   }
 }
