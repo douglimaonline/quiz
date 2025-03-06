@@ -1,3 +1,4 @@
+import shuffle from '@/utils/helper'
 import AnswerModel, { Answer } from './answer'
 
 export default class QuestionModel {
@@ -21,7 +22,7 @@ export default class QuestionModel {
   get id() {
     return this.#id
   }
-  get statment() {
+  get statement() {
     return this.#statement
   }
   get answers() {
@@ -32,6 +33,11 @@ export default class QuestionModel {
   }
   get answered() {
     return this.#answers.reduce((acc, a) => acc || a.reveled, false)
+  }
+
+  shuffleAnswers() {
+    const shuffledAnswers = shuffle(this.#answers)
+    return new QuestionModel(this.#id, this.#statement, shuffledAnswers)
   }
 
   toObject() {

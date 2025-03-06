@@ -1,10 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import questions from '../questionsBank'
-import { Question } from '@/pages/model/question'
+import shuffle from '@/utils/helper'
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Question[]>
+  res: NextApiResponse<number[]>
 ) {
-  res.status(200).json(questions.map((q) => q.toObject()))
+  const questionsId = shuffle(questions.map((q) => q.id))
+  res.status(200).json(questionsId)
 }
