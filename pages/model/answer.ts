@@ -24,6 +24,10 @@ export default class AnswerModel {
   static wrongAnswer(answer: string) {
     return new AnswerModel(answer, false)
   }
+
+  reviewAnswer() {
+    return new AnswerModel(this.#value, this.#correctAnswer, true)
+  }
   toObject() {
     return {
       value: this.#value,

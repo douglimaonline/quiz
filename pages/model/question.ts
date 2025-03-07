@@ -11,7 +11,7 @@ export default class QuestionModel {
     id: number,
     statment: string,
     answers: AnswerModel[],
-    answeredCorrectly?: false
+    answeredCorrectly?: boolean
   ) {
     this.#id = id
     this.#statement = statment
@@ -35,7 +35,17 @@ export default class QuestionModel {
     return this.#answers.reduce((acc, a) => acc || a.reveled, false)
   }
 
-  shuffleAnswers() {
+  answerWith(index: number): QuestionModel {
+    const correctAnswer = this.#answers[index]?.correctAnswer
+    const answers = this.#answers.map((answer, i) => {
+      const selectedAnswer = i === index
+      const shouldReview = selectedAnswer || answer.correctAnswer
+      return shouldReview ? answer.reviewAnswer() : answer
+    })
+    return new QuestionModel(this.#id, this.#statement, answers, correctAnswer)
+  }
+
+  shuffleAnswers(): QuestionModel {
     const shuffledAnswers = shuffle(this.#answers)
     return new QuestionModel(this.#id, this.#statement, shuffledAnswers)
   }
