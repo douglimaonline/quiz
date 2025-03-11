@@ -1,5 +1,6 @@
 import QuestionModel from '@/pages/model/question'
 import styles from '@/styles/question.module.css'
+import Title from './title'
 
 interface QuestionProps {
   value: QuestionModel
@@ -10,7 +11,7 @@ export default function Question(props: QuestionProps) {
 
   return (
     <div className={styles.question}>
-      <h1>{question.statement}</h1>
+      <Title text={question.statement} />
     </div>
   )
 }
