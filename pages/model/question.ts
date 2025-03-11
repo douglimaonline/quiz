@@ -55,6 +55,7 @@ export default class QuestionModel {
       id: this.#id,
       statement: this.#statement,
       answers: this.#answers.map((a) => a.toObject()),
+      answered: this.answered,
       answeredCorrectly: this.#answeredCorrectly,
     }
   }
@@ -64,5 +65,6 @@ export type Question = {
   id: number
   statement: string
   answers: Answer[]
+  answered: boolean
   answeredCorrectly: boolean | undefined
 }
