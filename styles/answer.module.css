@@ -1,0 +1,7 @@
+.answers {
+  display: flex;
+}
+
+.answer span {
+  margin: 5px;
+}
