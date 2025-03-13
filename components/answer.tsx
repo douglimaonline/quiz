@@ -9,9 +9,15 @@ interface AnswerProps {
 
 export default function Answer(props: AnswerProps) {
   return (
-    <div className={styles.answer}>
-      <span>{props.letter}</span>
-      <span>{props.value}</span>
+    <div className={styles.face_up}>
+      <div className={styles.answer}>
+        <div className={styles.letter}>
+          <span>{props.letter}</span>
+        </div>
+        <div className={styles.value}>
+          <span>{props.value}</span>
+        </div>
+      </div>
     </div>
   )
 }

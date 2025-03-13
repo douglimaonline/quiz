@@ -1,7 +1,30 @@
-.answers {
+.answer {
   display: flex;
+  margin: 5px;
 }
 
-.answer span {
+.letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 2.1rem;
+  font-weight: 700;
+  background-color: #ec7fa9;
   margin: 5px;
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin: 5px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.face_up {
+  /* background-color: yellowgreen; */
 }
