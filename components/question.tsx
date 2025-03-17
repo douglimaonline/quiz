@@ -2,6 +2,7 @@ import QuestionModel from '@/pages/model/question'
 import styles from '@/styles/question.module.css'
 import Title from './title'
 import Answer from './answer'
+import Timer from './timer'
 
 const letters = [
   { value: 'A', color: '#FBA518' },
@@ -13,6 +14,7 @@ const letters = [
 interface QuestionProps {
   value: QuestionModel
   onSelectAnswer: (index: number) => void
+  onCompleteTimer: () => void
 }
 
 export default function Question(props: QuestionProps) {
@@ -21,6 +23,7 @@ export default function Question(props: QuestionProps) {
   return (
     <div className={styles.question}>
       <Title text={question.statement} />
+      <Timer onComplete={props.onCompleteTimer} />
       {question.answers.map((a, i) => {
         return (
           <Answer

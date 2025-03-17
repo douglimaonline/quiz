@@ -8,24 +8,31 @@ const questionMock = new QuestionModel(
   1,
   'Qual fruto é conhecido no Norte e Nordeste como "jerimum"?',
   [
-    AnswerModel.wrongAnswer('Answer A'),
-    AnswerModel.rightAnswer('Marquês de Pombal'),
-    AnswerModel.wrongAnswer('Answer C'),
-    AnswerModel.wrongAnswer('Answer D'),
+    AnswerModel.wrongAnswer('Caju'),
+    AnswerModel.rightAnswer('Abóbora'),
+    AnswerModel.wrongAnswer('Côco'),
+    AnswerModel.wrongAnswer('Chuchu'),
   ]
 )
 
 export default function Home() {
   const [question, setQuestion] = useState(questionMock)
-  console.log('question:', question)
 
   function selectedAnswer(index: number) {
     setQuestion(question.answerWith(index))
   }
 
+  function handleCompleteTimer() {
+    setQuestion(question.answerWith(-1))
+  }
+
   return (
     <div className={style.home}>
-      <Question value={question} onSelectAnswer={selectedAnswer} />
+      <Question
+        value={question}
+        onSelectAnswer={selectedAnswer}
+        onCompleteTimer={handleCompleteTimer}
+      />
     </div>
   )
 }
