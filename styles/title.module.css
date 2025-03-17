@@ -1,7 +1,8 @@
 .title {
   display: flex;
+  width: 85%;
 }
 
 .text {
-  font-size: 4.5rem;
+  font-size: 3rem;
 }

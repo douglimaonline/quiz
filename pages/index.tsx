@@ -4,21 +4,23 @@ import style from '@/styles/home.module.css'
 import AnswerModel from './model/answer'
 import { useState } from 'react'
 
-const questionMock = new QuestionModel(1, 'Question title', [
-  AnswerModel.wrongAnswer('Answer A'),
-  AnswerModel.wrongAnswer('Answer B'),
-  AnswerModel.wrongAnswer('Answer C'),
-  AnswerModel.rightAnswer('Answer D'),
-])
+const questionMock = new QuestionModel(
+  1,
+  'Qual fruto é conhecido no Norte e Nordeste como "jerimum"?',
+  [
+    AnswerModel.wrongAnswer('Answer A'),
+    AnswerModel.rightAnswer('Marquês de Pombal'),
+    AnswerModel.wrongAnswer('Answer C'),
+    AnswerModel.wrongAnswer('Answer D'),
+  ]
+)
 
 export default function Home() {
   const [question, setQuestion] = useState(questionMock)
   console.log('question:', question)
 
   function selectedAnswer(index: number) {
-    const selectedAnswer = questionMock.answerWith(index)
-    console.log('index', index)
-    console.log('After answer:', selectedAnswer)
+    setQuestion(question.answerWith(index))
   }
 
   return (
