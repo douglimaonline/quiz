@@ -5,13 +5,17 @@ interface AnswerProps {
   value: string
   letter: string
   color: string
+  onSelectAnswer: (index: number) => void
 }
 
 export default function Answer(props: AnswerProps) {
   const color = props.color
 
   return (
-    <div className={styles.face_up}>
+    <div
+      className={styles.face_up}
+      onClick={() => props.onSelectAnswer(props.index)}
+    >
       <div className={styles.answer}>
         <div className={styles.letter} style={{ backgroundColor: color }}>
           <span>{props.letter}</span>

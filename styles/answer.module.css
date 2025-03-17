@@ -16,6 +16,7 @@
   border-radius: 20px;
   padding: 0 5px;
   margin: 0.7rem;
+  cursor: pointer;
 }
 
 .answer {

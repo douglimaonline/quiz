@@ -12,6 +12,7 @@ const letters = [
 
 interface QuestionProps {
   value: QuestionModel
+  onSelectAnswer: (index: number) => void
 }
 
 export default function Question(props: QuestionProps) {
@@ -28,6 +29,7 @@ export default function Question(props: QuestionProps) {
             value={a.value}
             letter={letters[i].value}
             color={letters[i].color}
+            onSelectAnswer={props.onSelectAnswer}
           />
         )
       })}
