@@ -2,6 +2,7 @@ import Question from '@/components/question'
 import QuestionModel from './model/question'
 import style from '@/styles/home.module.css'
 import AnswerModel from './model/answer'
+import Button from '@/components/button'
 import { useState } from 'react'
 
 const questionMock = new QuestionModel(
@@ -36,6 +37,9 @@ export default function Home() {
         onCompleteTimer={handleCompleteTimer}
         timeToAnswer={timeToAnswer}
       />
+      <div>
+        <Button href="https://www.google.com/" text="Próxima" />
+      </div>
     </div>
   )
 }

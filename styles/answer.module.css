@@ -1,8 +1,8 @@
 .content {
   position: relative;
   display: flex;
-  width: 50%;
-  height: 80px;
+  width: 35%;
+  height: 70px;
   padding: 0 5px;
   margin: 0.7rem;
 }
@@ -23,7 +23,7 @@
 
 .face_down {
   justify-content: center;
-  padding-top: 0.5rem;
+  padding-top: 0.1rem;
 }
 
 .correct {
