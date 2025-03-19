@@ -15,15 +15,17 @@ interface QuestionProps {
   value: QuestionModel
   onSelectAnswer: (index: number) => void
   onCompleteTimer: () => void
+  timeToAnswer?: number
 }
 
 export default function Question(props: QuestionProps) {
   const question = props.value
+  const timeToAnswer = props.timeToAnswer ?? 10
 
   return (
     <div className={styles.question}>
       <Title text={question.statement} />
-      <Timer onComplete={props.onCompleteTimer} />
+      <Timer onComplete={props.onCompleteTimer} timeToAnswer={timeToAnswer} />
       {question.answers.map((a, i) => {
         return (
           <Answer

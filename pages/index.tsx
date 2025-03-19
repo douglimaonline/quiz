@@ -17,9 +17,11 @@ const questionMock = new QuestionModel(
 
 export default function Home() {
   const [question, setQuestion] = useState(questionMock)
+  const [timeToAnswer, setTimeToAnswer] = useState(10)
 
   function selectedAnswer(index: number) {
     setQuestion(question.answerWith(index))
+    setTimeToAnswer(0)
   }
 
   function handleCompleteTimer() {
@@ -32,6 +34,7 @@ export default function Home() {
         value={question}
         onSelectAnswer={selectedAnswer}
         onCompleteTimer={handleCompleteTimer}
+        timeToAnswer={timeToAnswer}
       />
     </div>
   )
