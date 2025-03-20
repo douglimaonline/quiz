@@ -6,6 +6,7 @@ import styles from '@/styles/questionnaire.module.css'
 interface QuestionnaireProps {
   question: QuestionModel
   lastQuestion: boolean
+  timeToAnswer?: number
   answeredQuestion: (question: QuestionModel) => void
   nextStep: () => void
 }
@@ -24,6 +25,7 @@ export default function Questionnaire(props: QuestionnaireProps) {
           value={props.question}
           onSelectAnswer={answered}
           onCompleteTimer={props.nextStep}
+          timeToAnswer={props.timeToAnswer}
         />
       )}
       <Button

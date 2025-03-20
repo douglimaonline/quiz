@@ -19,11 +19,13 @@ export default function Home() {
   const [question, setQuestion] = useState(questionMock)
   const [timeToAnswer, setTimeToAnswer] = useState(10)
 
-  function selectedAnswer(index: QuestionModel) {
+  function selectedAnswer(question: QuestionModel) {
     setTimeToAnswer(0)
+    setQuestion(question.answerWith(question.id))
   }
 
   function handleCompleteTimer() {
+    setTimeToAnswer(0)
     setQuestion(question.answerWith(-1))
   }
 
@@ -31,9 +33,10 @@ export default function Home() {
     <div className={style.home}>
       <Questionnaire
         question={question}
-        lastQuestion={true}
+        lastQuestion={false}
         answeredQuestion={selectedAnswer}
         nextStep={handleCompleteTimer}
+        timeToAnswer={timeToAnswer}
       />
     </div>
   )
