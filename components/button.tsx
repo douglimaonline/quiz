@@ -11,11 +11,19 @@ export default function Button(props: ButtonProps) {
   const href = props.href
   function renderButton() {
     return (
-      <button className={styles.button} onClick={props.onclick}>
-        {props.text}
-      </button>
+      <div className={styles.center}>
+        <button className={styles.button} onClick={props.onclick}>
+          {props.text}
+        </button>
+      </div>
     )
   }
 
-  return href ? <Link href={href}>{renderButton()}</Link> : renderButton()
+  return href ? (
+    <Link className={styles.center} href={href}>
+      {renderButton()}
+    </Link>
+  ) : (
+    renderButton()
+  )
 }

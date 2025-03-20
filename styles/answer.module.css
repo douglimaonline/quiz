@@ -19,6 +19,11 @@
   align-items: center;
   background-color: #a5158c;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.face_up:hover {
+  transform: scale(1.1);
 }
 
 .face_down {

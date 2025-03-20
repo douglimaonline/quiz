@@ -6,14 +6,14 @@ interface AnswerProps {
   value: string
   letter: string
   color: string
-  answer: AnswerModel
+  currentAnswer: AnswerModel
   onSelectAnswer: (index: number) => void
 }
 
 export default function Answer(props: AnswerProps) {
   const color = props.color
-  const correctAnswer = props.answer.correctAnswer
-  const reveled = props.answer.reveled
+  const correctAnswer = props.currentAnswer.correctAnswer
+  const reveled = props.currentAnswer.reveled
 
   return (
     <div className={styles.content}>

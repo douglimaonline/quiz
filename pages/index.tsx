@@ -1,8 +1,7 @@
-import Question from '@/components/question'
+import Questionnaire from '@/components/questionnaire'
 import QuestionModel from './model/question'
 import style from '@/styles/home.module.css'
 import AnswerModel from './model/answer'
-import Button from '@/components/button'
 import { useState } from 'react'
 
 const questionMock = new QuestionModel(
@@ -20,8 +19,7 @@ export default function Home() {
   const [question, setQuestion] = useState(questionMock)
   const [timeToAnswer, setTimeToAnswer] = useState(10)
 
-  function selectedAnswer(index: number) {
-    setQuestion(question.answerWith(index))
+  function selectedAnswer(index: QuestionModel) {
     setTimeToAnswer(0)
   }
 
@@ -31,15 +29,12 @@ export default function Home() {
 
   return (
     <div className={style.home}>
-      <Question
-        value={question}
-        onSelectAnswer={selectedAnswer}
-        onCompleteTimer={handleCompleteTimer}
-        timeToAnswer={timeToAnswer}
+      <Questionnaire
+        question={question}
+        lastQuestion={true}
+        answeredQuestion={selectedAnswer}
+        nextStep={handleCompleteTimer}
       />
-      <div>
-        <Button href="https://www.google.com/" text="Próxima" />
-      </div>
     </div>
   )
 }
