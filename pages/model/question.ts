@@ -59,6 +59,16 @@ export default class QuestionModel {
       answeredCorrectly: this.#answeredCorrectly,
     }
   }
+
+  static questionFromJson(obj: Question): QuestionModel {
+    const answers = obj.answers.map((a) => AnswerModel.answerFromJson(a))
+    return new QuestionModel(
+      obj.id,
+      obj.statement,
+      answers,
+      obj.answeredCorrectly
+    )
+  }
 }
 
 export type Question = {

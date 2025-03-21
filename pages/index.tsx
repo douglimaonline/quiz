@@ -2,7 +2,7 @@ import Questionnaire from '@/components/questionnaire'
 import QuestionModel from './model/question'
 import style from '@/styles/home.module.css'
 import AnswerModel from './model/answer'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const questionMock = new QuestionModel(
   1,
@@ -15,9 +15,33 @@ const questionMock = new QuestionModel(
   ]
 )
 
+const BASE_URL = 'http://localhost:3000/api'
+
 export default function Home() {
-  const [question, setQuestion] = useState(questionMock)
+  const [question, setQuestion] = useState<QuestionModel>(questionMock)
   const [timeToAnswer, setTimeToAnswer] = useState(10)
+  const [questionIds, setQuestionIds] = useState<number[]>([])
+
+  async function getQuestionIds() {
+    const resp = await fetch(`${BASE_URL}/questionnaire`)
+    const data = await resp.json()
+    setQuestionIds(data)
+  }
+
+  async function getQuestionById(questionId: number) {
+    const resp = await fetch(`${BASE_URL}/questions/${questionId}`)
+    const data = await resp.json()
+    const question = QuestionModel.questionFromJson(data)
+    setQuestion(question)
+  }
+
+  useEffect(() => {
+    getQuestionIds()
+  }, [])
+
+  useEffect(() => {
+    questionIds.length && getQuestionById(questionIds[0])
+  }, [questionIds])
 
   function selectedAnswer(question: QuestionModel) {
     setTimeToAnswer(0)

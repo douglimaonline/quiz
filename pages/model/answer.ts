@@ -28,6 +28,11 @@ export default class AnswerModel {
   reviewAnswer() {
     return new AnswerModel(this.#value, this.#correctAnswer, true)
   }
+
+  static answerFromJson(obj: Answer): AnswerModel {
+    return new AnswerModel(obj.value, obj.correctAnswer, obj.reveled)
+  }
+
   toObject() {
     return {
       value: this.#value,
