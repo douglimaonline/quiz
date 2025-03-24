@@ -5,12 +5,13 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
 const BASE_URL = 'http://localhost:3000/api'
+const TIME_TO_ANSWER = 10
 
 export default function Home() {
   const rounter = useRouter()
   const [question, setQuestion] = useState<QuestionModel>()
   const [questionIds, setQuestionIds] = useState<number[]>([])
-  const [timeToAnswer, setTimeToAnswer] = useState(10)
+  const [timeToAnswer, setTimeToAnswer] = useState(TIME_TO_ANSWER)
   const [score, setScore] = useState(0)
 
   async function getQuestionIds() {
@@ -48,7 +49,7 @@ export default function Home() {
   }
 
   function nextStep() {
-    setTimeToAnswer(10)
+    setTimeToAnswer(TIME_TO_ANSWER)
     const nextQuestionId = getNextQuestionId()
     nextQuestionId ? nextQuestion(nextQuestionId) : finish()
   }
