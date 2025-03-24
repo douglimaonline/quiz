@@ -39,6 +39,7 @@ export default function Question(props: QuestionProps) {
             letter={letters[i].value}
             color={letters[i].color}
             currentAnswer={a}
+            question={props.value}
             onSelectAnswer={props.onSelectAnswer}
           />
         )

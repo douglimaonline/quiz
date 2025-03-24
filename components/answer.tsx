@@ -1,11 +1,13 @@
 import styles from '@/styles/answer.module.css'
 import AnswerModel from '@/pages/model/answer'
+import QuestionModel from '@/pages/model/question'
 
 interface AnswerProps {
   index: number
   value: string
   letter: string
   color: string
+  question: QuestionModel
   currentAnswer: AnswerModel
   onSelectAnswer: (index: number) => void
 }
@@ -14,12 +16,15 @@ export default function Answer(props: AnswerProps) {
   const color = props.color
   const correctAnswer = props.currentAnswer.correctAnswer
   const reveled = props.currentAnswer.reveled
+  const faceUpClass = props.question.answered
+    ? styles.face_up_unselect
+    : styles.face_up
 
   return (
     <div className={styles.content}>
       {!reveled ? (
         <div
-          className={styles.face_up}
+          className={`${faceUpClass}`}
           onClick={() => props.onSelectAnswer(props.index)}
         >
           <div className={styles.answer}>

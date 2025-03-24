@@ -8,7 +8,8 @@
 }
 
 .face_up,
-.face_down {
+.face_down,
+.face_up_unselect {
   display: flex;
   width: 100%;
   height: 100%;
@@ -20,6 +21,11 @@
   background-color: #a5158c;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+}
+
+.face_up_unselect {
+  align-items: center;
+  background-color: #a5158c;
 }
 
 .face_up:hover {
