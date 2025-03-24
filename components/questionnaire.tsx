@@ -4,7 +4,7 @@ import Button from './button'
 import styles from '@/styles/questionnaire.module.css'
 
 interface QuestionnaireProps {
-  question: QuestionModel
+  question: QuestionModel | undefined
   lastQuestion: boolean
   timeToAnswer?: number
   answeredQuestion: (question: QuestionModel) => void
@@ -13,8 +13,10 @@ interface QuestionnaireProps {
 
 export default function Questionnaire(props: QuestionnaireProps) {
   function answered(index: number) {
-    if (!props.question.answered) {
-      props.answeredQuestion(props.question.answerWith(index))
+    if (props.question) {
+      if (!props.question.answered) {
+        props.answeredQuestion(props.question.answerWith(index))
+      }
     }
   }
 

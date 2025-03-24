@@ -1,26 +1,17 @@
 import Questionnaire from '@/components/questionnaire'
 import QuestionModel from './model/question'
 import style from '@/styles/home.module.css'
-import AnswerModel from './model/answer'
 import { useEffect, useState } from 'react'
-
-const questionMock = new QuestionModel(
-  1,
-  'Qual fruto é conhecido no Norte e Nordeste como "jerimum"?',
-  [
-    AnswerModel.wrongAnswer('Caju'),
-    AnswerModel.rightAnswer('Abóbora'),
-    AnswerModel.wrongAnswer('Côco'),
-    AnswerModel.wrongAnswer('Chuchu'),
-  ]
-)
+import { useRouter } from 'next/router'
 
 const BASE_URL = 'http://localhost:3000/api'
 
 export default function Home() {
-  const [question, setQuestion] = useState<QuestionModel>(questionMock)
-  const [timeToAnswer, setTimeToAnswer] = useState(10)
+  const rounter = useRouter()
+  const [question, setQuestion] = useState<QuestionModel>()
   const [questionIds, setQuestionIds] = useState<number[]>([])
+  const [timeToAnswer, setTimeToAnswer] = useState(10)
+  const [score, setScore] = useState(0)
 
   async function getQuestionIds() {
     const resp = await fetch(`${BASE_URL}/questionnaire`)
@@ -45,21 +36,44 @@ export default function Home() {
 
   function selectedAnswer(question: QuestionModel) {
     setTimeToAnswer(0)
-    setQuestion(question.answerWith(question.id))
+    setQuestion(question)
+    setScore(score + (question.answeredCorrectly ? 1 : 0))
   }
 
-  function handleCompleteTimer() {
-    setTimeToAnswer(0)
-    setQuestion(question.answerWith(-1))
+  function getNextQuestionId() {
+    if (question) {
+      const nextId = questionIds.indexOf(question.id) + 1
+      return questionIds[nextId]
+    }
+  }
+
+  function nextStep() {
+    setTimeToAnswer(10)
+    const nextQuestionId = getNextQuestionId()
+    nextQuestionId ? nextQuestion(nextQuestionId) : finish()
+  }
+
+  function nextQuestion(nextId: number) {
+    getQuestionById(nextId)
+  }
+
+  function finish() {
+    rounter.push({
+      pathname: '/result',
+      query: {
+        count: questionIds.length,
+        score: score,
+      },
+    })
   }
 
   return (
     <div className={style.home}>
       <Questionnaire
         question={question}
-        lastQuestion={false}
+        lastQuestion={getNextQuestionId() === undefined}
         answeredQuestion={selectedAnswer}
-        nextStep={handleCompleteTimer}
+        nextStep={nextStep}
         timeToAnswer={timeToAnswer}
       />
     </div>
