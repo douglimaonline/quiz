@@ -13,11 +13,11 @@ interface AnswerProps {
 export default function Answer(props: AnswerProps) {
   const color = props.color
   const correctAnswer = props.currentAnswer.correctAnswer
-  const reveled = props.currentAnswer.reveled
+  const reveledAnswer = props.currentAnswer.reveled ? styles.reveledAnswer : ''
 
   return (
-    <div className={styles.content}>
-      {!reveled ? (
+    <div className={styles.answer_box}>
+      <div className={`${reveledAnswer} ${styles.content}`}>
         <div
           className={styles.face_up}
           onClick={() => props.onSelectAnswer(props.index)}
@@ -31,7 +31,6 @@ export default function Answer(props: AnswerProps) {
             </div>
           </div>
         </div>
-      ) : (
         <div
           className={`${styles.face_down} ${
             correctAnswer ? styles.correct : styles.wrong
@@ -44,7 +43,7 @@ export default function Answer(props: AnswerProps) {
             <span>{props.value}</span>
           </div>
         </div>
-      )}
+      </div>
     </div>
   )
 }

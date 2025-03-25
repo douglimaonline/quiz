@@ -1,18 +1,34 @@
-.content {
-  position: relative;
+.answer_box {
   display: flex;
+  min-width: 500px;
   width: 50%;
   height: 70px;
   padding: 0 5px;
   margin: 0.7rem;
+  perspective: 1000px;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex: 1;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.reveledAnswer.content {
+  transform: rotateX(180deg);
 }
 
 .face_up,
 .face_down {
+  position: absolute;
   display: flex;
   width: 100%;
   height: 100%;
   border-radius: 20px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .face_up {
@@ -29,6 +45,7 @@
 .face_down {
   justify-content: center;
   padding-top: 0.1rem;
+  transform: rotateX(180deg);
 }
 
 .correct {
