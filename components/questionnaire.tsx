@@ -1,4 +1,4 @@
-import QuestionModel from '@/pages/model/question'
+import QuestionModel from '@/model/question'
 import Question from './question'
 import Button from './button'
 import styles from '@/styles/questionnaire.module.css'

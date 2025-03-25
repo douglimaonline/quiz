@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import questions from '../questionsBank'
-import { Question } from '@/pages/model/question'
+import { Question } from '@/model/question'
 
 export default function handler(
   req: NextApiRequest,

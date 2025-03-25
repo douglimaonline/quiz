@@ -1,5 +1,5 @@
 import styles from '@/styles/answer.module.css'
-import AnswerModel from '@/pages/model/answer'
+import AnswerModel from '@/model/answer'
 
 interface AnswerProps {
   index: number

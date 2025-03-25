@@ -1,4 +1,4 @@
-import QuestionModel from '@/pages/model/question'
+import QuestionModel from '@/model/question'
 import styles from '@/styles/question.module.css'
 import Title from './title'
 import Answer from './answer'

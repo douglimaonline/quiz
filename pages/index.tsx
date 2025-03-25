@@ -1,5 +1,5 @@
 import Questionnaire from '@/components/questionnaire'
-import QuestionModel from './model/question'
+import QuestionModel from '../model/question'
 import style from '@/styles/home.module.css'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
