@@ -4,7 +4,7 @@ import style from '@/styles/home.module.css'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
-const BASE_URL = 'http://localhost:3000/api'
+const BASE_URL = 'https://quiz-chi-ruby.vercel.app/api'
 const TIME_TO_ANSWER = 10
 
 export default function Home() {
