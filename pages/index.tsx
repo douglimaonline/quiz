@@ -3,6 +3,7 @@ import QuestionModel from '../model/question'
 import style from '@/styles/home.module.css'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import QuestionCounter from '@/components/questionCounter'
 
 const BASE_URL = 'https://quiz-chi-ruby.vercel.app/api'
 const TIME_TO_ANSWER = 10
@@ -13,6 +14,8 @@ export default function Home() {
   const [questionIds, setQuestionIds] = useState<number[]>([])
   const [timeToAnswer, setTimeToAnswer] = useState(TIME_TO_ANSWER)
   const [score, setScore] = useState(0)
+  const [questionIndex, setQuestionIndex] = useState<number>(1)
+  let totalQuestions: number = questionIds.length
 
   async function getQuestionIds() {
     const resp = await fetch(`${BASE_URL}/questionnaire`)
@@ -56,6 +59,7 @@ export default function Home() {
 
   function nextQuestion(nextId: number) {
     getQuestionById(nextId)
+    setQuestionIndex(questionIndex + 1)
   }
 
   function finish() {
@@ -70,6 +74,10 @@ export default function Home() {
 
   return (
     <div className={style.home}>
+      <QuestionCounter
+        currentQuestions={questionIndex}
+        totalQuestions={totalQuestions}
+      />
       <Questionnaire
         question={question}
         lastQuestion={getNextQuestionId() === undefined}

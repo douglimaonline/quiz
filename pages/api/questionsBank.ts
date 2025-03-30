@@ -106,22 +106,6 @@ const questions: QuestionModel[] = [
     AnswerModel.wrongAnswer('Indébito'),
     AnswerModel.rightAnswer('Indenização'),
   ]),
-  new QuestionModel(
-    215,
-    'Que personagem do folclore brasileiro tem uma perna só?',
-    [
-      AnswerModel.wrongAnswer('Cuca'),
-      AnswerModel.wrongAnswer('Curupira'),
-      AnswerModel.wrongAnswer('Boitatá'),
-      AnswerModel.rightAnswer('Saci-pererê'),
-    ]
-  ),
-  new QuestionModel(216, 'Quem é o "patrono" do Exército Brasileiro?', [
-    AnswerModel.wrongAnswer('Marechal Deodoro'),
-    AnswerModel.wrongAnswer('Barão de Mauá'),
-    AnswerModel.wrongAnswer('Marquês de Pombal'),
-    AnswerModel.rightAnswer('Duque de Caxias'),
-  ]),
 ]
 
 export default questions

@@ -23,18 +23,20 @@ export default function Questionnaire(props: QuestionnaireProps) {
   return (
     <div className={styles.questionnaire}>
       {props.question && (
-        <Question
-          value={props.question}
-          onSelectAnswer={answered}
-          onCompleteTimer={props.nextStep}
-          timeToAnswer={props.timeToAnswer}
-        />
+        <>
+          <Question
+            value={props.question}
+            onSelectAnswer={answered}
+            onCompleteTimer={props.nextStep}
+            timeToAnswer={props.timeToAnswer}
+          />
+          <Button
+            href=""
+            text={props.lastQuestion ? 'Resultado' : 'Próxima'}
+            onclick={props.nextStep}
+          />
+        </>
       )}
-      <Button
-        href=""
-        text={props.lastQuestion ? 'Resultado' : 'Próxima'}
-        onclick={props.nextStep}
-      />
     </div>
   )
 }
