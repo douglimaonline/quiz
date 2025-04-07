@@ -1,11 +1,11 @@
 import Questionnaire from '@/components/questionnaire'
-import QuestionModel from '../model/question'
+import QuestionModel, { Question } from '../model/question'
 import style from '@/styles/home.module.css'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import QuestionCounter from '@/components/questionCounter'
 
-const BASE_URL = 'https://quiz-chi-ruby.vercel.app/api'
+const BASE_URL = 'http://localhost:3000/api'
 const TIME_TO_ANSWER = 10
 
 export default function Home() {
@@ -16,6 +16,20 @@ export default function Home() {
   const [score, setScore] = useState(0)
   const [questionIndex, setQuestionIndex] = useState<number>(1)
   let totalQuestions: number = questionIds.length
+
+  function getQuestion() {
+    const savedQuestion = localStorage.getItem('question')
+    if (savedQuestion) {
+      const parsedQuestion: Question = JSON.parse(savedQuestion)
+      setQuestion(
+        QuestionModel.questionFromJson(parsedQuestion).shuffleAnswers()
+      )
+    } else {
+      if (questionIds.length) {
+        getQuestionById(questionIds[0])
+      }
+    }
+  }
 
   async function getQuestionIds() {
     const resp = await fetch(`${BASE_URL}/questionnaire`)
@@ -35,7 +49,7 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    questionIds.length && getQuestionById(questionIds[0])
+    getQuestion() // Tenta pegar a questão do localStorage na inicialização
   }, [questionIds])
 
   function selectedAnswer(question: QuestionModel) {
