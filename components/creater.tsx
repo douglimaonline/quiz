@@ -1,16 +1,17 @@
 import { useState } from 'react'
-import Title from './title'
 import style from '@/styles/create.module.css'
+import Title from './title'
+import CreateAnswer from './createAnswer'
 import Button from './button'
 import QuestionModel from '@/model/question'
 import AnswerModel from '@/model/answer'
 
 export default function QuestionCreater() {
   const [statemant, setStatemant] = useState('')
-  const [answerA, setanswerA] = useState('')
-  const [answerB, setanswerB] = useState('')
-  const [answerC, setanswerC] = useState('')
-  const [answerD, setanswerD] = useState('')
+  const [answerA, setAnswerA] = useState('')
+  const [answerB, setAnswerB] = useState('')
+  const [answerC, setAnswerC] = useState('')
+  const [answerD, setAnswerD] = useState('')
 
   function handleClick() {
     const answersValue = [answerA, answerB, answerC, answerD]
@@ -27,31 +28,16 @@ export default function QuestionCreater() {
     <div className={style.create}>
       <Title text={'Crie Seu Quiz'} />
       <input
+        style={{ minHeight: '100px' }}
         type="text"
         value={statemant}
         onChange={(e) => setStatemant(e.target.value)}
       />
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <input
-          type="text"
-          value={answerA}
-          onChange={(e) => setanswerA(e.target.value)}
-        />
-        <input
-          type="text"
-          value={answerB}
-          onChange={(e) => setanswerB(e.target.value)}
-        />
-        <input
-          type="text"
-          value={answerC}
-          onChange={(e) => setanswerC(e.target.value)}
-        />
-        <input
-          type="text"
-          value={answerD}
-          onChange={(e) => setanswerD(e.target.value)}
-        />
+      <div className={style.answers}>
+        <CreateAnswer correctAnswer={true} onChange={(e) => setAnswerA(e)} />
+        <CreateAnswer correctAnswer={false} onChange={(e) => setAnswerB(e)} />
+        <CreateAnswer correctAnswer={false} onChange={(e) => setAnswerC(e)} />
+        <CreateAnswer correctAnswer={false} onChange={(e) => setAnswerD(e)} />
       </div>
       <Button text={'Salvar'} onclick={handleClick} />
     </div>

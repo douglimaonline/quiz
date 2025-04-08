@@ -1,6 +1,42 @@
 .create {
   display: flex;
+  text-align: center;
   flex-direction: column;
   height: 80%;
   gap: 2rem;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+}
+
+.answers div {
+  min-width: 500px;
+  padding: 5px;
+  margin: 0.5rem;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.answers div:hover {
+  transform: scale(1.1);
+}
+
+.answers input {
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  height: 40px;
+}
+
+.correct {
+  background-color: #3a7d44;
+}
+
+.wrong {
+  background-color: #e52020;
 }

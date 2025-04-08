@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import QuestionCounter from '@/components/questionCounter'
 
 const BASE_URL = 'http://localhost:3000/api'
-const TIME_TO_ANSWER = 10
+const TIME_TO_ANSWER = 20
 
 export default function Home() {
   const rounter = useRouter()
@@ -49,7 +49,7 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    getQuestion() // Tenta pegar a questão do localStorage na inicialização
+    getQuestion()
   }, [questionIds])
 
   function selectedAnswer(question: QuestionModel) {
