@@ -2,109 +2,115 @@ import QuestionModel from '../../model/question'
 import AnswerModel from '../../model/answer'
 
 const questions: QuestionModel[] = [
-  new QuestionModel(306, 'Qual bicho transmite a Doença de Chagas?', [
-    AnswerModel.wrongAnswer('Abelha'),
-    AnswerModel.wrongAnswer('Barata'),
-    AnswerModel.wrongAnswer('Pulga'),
-    AnswerModel.rightAnswer('Barbeiro'),
+  new QuestionModel(301, 'Qual é a sexta nota da escala musical?', [
+    AnswerModel.wrongAnswer('Mi'),
+    AnswerModel.wrongAnswer('Ré'),
+    AnswerModel.wrongAnswer('Sol'),
+    AnswerModel.rightAnswer('Lá'),
+  ]),
+  new QuestionModel(302, 'Qual é a nota que vem depois de Sol?', [
+    AnswerModel.wrongAnswer('Si'),
+    AnswerModel.wrongAnswer('Mi'),
+    AnswerModel.wrongAnswer('Dó'),
+    AnswerModel.rightAnswer('Lá'),
   ]),
   new QuestionModel(
-    202,
-    'Qual fruto é conhecido no Norte e Nordeste como "jerimum"?',
+    303,
+    'Qual símbolo indica o início da leitura musical na partitura?',
     [
-      AnswerModel.wrongAnswer('Caju'),
-      AnswerModel.wrongAnswer('Côco'),
-      AnswerModel.wrongAnswer('Chuchu'),
-      AnswerModel.rightAnswer('Abóbora'),
+      AnswerModel.wrongAnswer('Pausa'),
+      AnswerModel.wrongAnswer('Compasso'),
+      AnswerModel.wrongAnswer('Sustenido'),
+      AnswerModel.rightAnswer('Clave'),
     ]
   ),
-  new QuestionModel(203, 'Qual é o coletivo de cães?', [
-    AnswerModel.wrongAnswer('Manada'),
-    AnswerModel.wrongAnswer('Alcateia'),
-    AnswerModel.wrongAnswer('Rebanho'),
-    AnswerModel.rightAnswer('Matilha'),
+  new QuestionModel(304, 'Qual é o intervalo entre Dó e Fá?', [
+    AnswerModel.wrongAnswer('Segunda maior'),
+    AnswerModel.wrongAnswer('Terça menor'),
+    AnswerModel.wrongAnswer('Quinta justa'),
+    AnswerModel.rightAnswer('Quarta justa'),
+  ]),
+  new QuestionModel(305, 'Qual é a formação de um acorde maior?', [
+    AnswerModel.wrongAnswer('1ª – 3ª menor – 5ª diminuta'),
+    AnswerModel.wrongAnswer('1ª – 3ª menor – 5ª justa'),
+    AnswerModel.wrongAnswer('1ª – 4ª – 5ª'),
+    AnswerModel.rightAnswer('1ª – 3ª maior – 5ª justa'),
+  ]),
+  new QuestionModel(306, 'Qual é o 6º grau no campo harmônico de Sol maior?', [
+    AnswerModel.wrongAnswer('Am'),
+    AnswerModel.wrongAnswer('Bm'),
+    AnswerModel.wrongAnswer('F#m'),
+    AnswerModel.rightAnswer('Em'),
   ]),
   new QuestionModel(
-    204,
-    'Qual é o triângulo que tem todos os lados diferentes?',
+    307,
+    'Qual desses acordes representa o modo menor natural?',
     [
-      AnswerModel.wrongAnswer('Equilátero'),
-      AnswerModel.wrongAnswer('Isóceles'),
-      AnswerModel.wrongAnswer('Trapézio'),
-      AnswerModel.rightAnswer('Escaleno'),
+      AnswerModel.wrongAnswer('C – D – E – F – G – A – B'),
+      AnswerModel.wrongAnswer('C – D – Eb – F – G – A – B'),
+      AnswerModel.wrongAnswer('C – D – Eb – F – G – Ab – B'),
+      AnswerModel.rightAnswer('C – D – Eb – F – G – Ab – Bb'),
     ]
   ),
-  new QuestionModel(205, 'Quem compôs o Hino da Independência?', [
-    AnswerModel.wrongAnswer('Castro Alves'),
-    AnswerModel.wrongAnswer('Manuel Bandeira'),
-    AnswerModel.wrongAnswer('Carlos Gomes'),
-    AnswerModel.rightAnswer('Dom Pedro I'),
+  new QuestionModel(308, 'Qual é o tom relativo menor de Sol maior?', [
+    AnswerModel.wrongAnswer('Dó menor'),
+    AnswerModel.wrongAnswer('Lá menor'),
+    AnswerModel.wrongAnswer('Si menor'),
+    AnswerModel.rightAnswer('Mi menor'),
   ]),
-  new QuestionModel(206, 'Qual é o antônimo de "malograr"?', [
-    AnswerModel.wrongAnswer('Perder'),
-    AnswerModel.wrongAnswer('Fracassar'),
-    AnswerModel.wrongAnswer('Desprezar'),
-    AnswerModel.rightAnswer('Conseguir'),
-  ]),
-  new QuestionModel(207, 'Em que país nasceu Carmen Miranda?', [
-    AnswerModel.wrongAnswer('Argentina'),
-    AnswerModel.wrongAnswer('Espanha'),
-    AnswerModel.wrongAnswer('Brasil'),
-    AnswerModel.rightAnswer('Portugal'),
+  new QuestionModel(309, 'Qual é a tríade que forma o acorde de Ré menor?', [
+    AnswerModel.wrongAnswer('D – F# – A'),
+    AnswerModel.wrongAnswer('D – G – A'),
+    AnswerModel.wrongAnswer('D – E – G'),
+    AnswerModel.rightAnswer('D – F – A'),
   ]),
   new QuestionModel(
-    208,
-    'Qual foi o último Presidente do período da ditadura militar no Brasil?',
+    310,
+    'Qual é o grau dominante no campo harmônico de Lá menor?',
     [
-      AnswerModel.wrongAnswer('Costa e Silva'),
-      AnswerModel.wrongAnswer('Emílio Médici'),
-      AnswerModel.wrongAnswer('Ernesto Geisel'),
-      AnswerModel.rightAnswer('João Figueiredo'),
+      AnswerModel.wrongAnswer('F'),
+      AnswerModel.wrongAnswer('E♭'),
+      AnswerModel.wrongAnswer('C'),
+      AnswerModel.rightAnswer('E'),
     ]
   ),
   new QuestionModel(
-    209,
-    'Seguindo a sequência do baralho, qual carta vem depois do dez?',
+    311,
+    'Qual modo grego começa na segunda nota da escala maior?',
     [
-      AnswerModel.wrongAnswer('Ás'),
-      AnswerModel.wrongAnswer('Nove'),
-      AnswerModel.wrongAnswer('Rei'),
-      AnswerModel.rightAnswer('Valete'),
+      AnswerModel.wrongAnswer('Jônio'),
+      AnswerModel.wrongAnswer('Frígio'),
+      AnswerModel.wrongAnswer('Lídio'),
+      AnswerModel.rightAnswer('Dórico'),
     ]
   ),
-  new QuestionModel(210, 'O adjetivo "venoso" está relacionado a:', [
-    AnswerModel.wrongAnswer('Vela'),
-    AnswerModel.wrongAnswer('Vento'),
-    AnswerModel.wrongAnswer('Vênia'),
-    AnswerModel.rightAnswer('Veia'),
+  new QuestionModel(312, 'Qual dessas escalas é considerada exótica?', [
+    AnswerModel.wrongAnswer('Escala maior'),
+    AnswerModel.wrongAnswer('Escala menor natural'),
+    AnswerModel.wrongAnswer('Escala dórica'),
+    AnswerModel.rightAnswer('Escala cigana'),
   ]),
-  new QuestionModel(211, 'Que nome se dá à purificação por meio da água?', [
-    AnswerModel.wrongAnswer('Abrupção'),
-    AnswerModel.wrongAnswer('Abolição'),
-    AnswerModel.wrongAnswer('Abnegação'),
-    AnswerModel.rightAnswer('Ablução'),
+  new QuestionModel(313, 'O que caracteriza um acorde diminuto?', [
+    AnswerModel.wrongAnswer('3ª maior e 5ª justa'),
+    AnswerModel.wrongAnswer('3ª menor e 5ª justa'),
+    AnswerModel.wrongAnswer('3ª maior e 5ª aumentada'),
+    AnswerModel.rightAnswer('3ª menor e 5ª diminuta'),
   ]),
   new QuestionModel(
-    212,
-    'Qual montanha se localiza entre a fronteira do Tibet com o Nepal?',
+    314,
+    'Qual é a função harmônica de um acorde do 7º grau no campo harmônico maior?',
     [
-      AnswerModel.wrongAnswer('Monte Branco'),
-      AnswerModel.wrongAnswer('Monte Fuji'),
-      AnswerModel.wrongAnswer('Monte Carlo'),
-      AnswerModel.rightAnswer('Monte Everest'),
+      AnswerModel.wrongAnswer('Subdominante'),
+      AnswerModel.wrongAnswer('Tônica'),
+      AnswerModel.wrongAnswer('Dominante secundário'),
+      AnswerModel.rightAnswer('Função dominante'),
     ]
   ),
-  new QuestionModel(213, 'Em que parte do corpo se encontra a epiglote?', [
-    AnswerModel.wrongAnswer('Estômago'),
-    AnswerModel.wrongAnswer('Pâncreas'),
-    AnswerModel.wrongAnswer('Rim'),
-    AnswerModel.rightAnswer('Pescoço'),
-  ]),
-  new QuestionModel(214, 'A compensação por perda é chamada de...', [
-    AnswerModel.wrongAnswer('Déficit'),
-    AnswerModel.wrongAnswer('Indexação'),
-    AnswerModel.wrongAnswer('Indébito'),
-    AnswerModel.rightAnswer('Indenização'),
+  new QuestionModel(315, 'Qual é a sequência de graus do modo frígio?', [
+    AnswerModel.wrongAnswer('1 – 2 – 3 – 4 – 5 – 6 – 7'),
+    AnswerModel.wrongAnswer('1 – 2 – 3 – 4 – 5 – 6 – 7♭'),
+    AnswerModel.wrongAnswer('1 – 2 – 3♭ – 4 – 5♭ – 6 – 7'),
+    AnswerModel.rightAnswer('1 – 2♭ – 3♭ – 4 – 5 – 6♭ – 7♭'),
   ]),
 ]
 

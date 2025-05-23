@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import QuestionCounter from '@/components/questionCounter'
 
 const BASE_URL = 'https://quiz-chi-ruby.vercel.app/api'
-const TIME_TO_ANSWER = 10
+const TIME_TO_ANSWER = 15
 
 export default function Home() {
   const rounter = useRouter()
