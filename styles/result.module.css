@@ -9,4 +9,16 @@
 
 .values {
   display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .result {
+    height: 100vh;
+    font-size: 1.5rem;
+  }
+  .values {
+    align-items: center;
+    flex-direction: column;
+  }
 }

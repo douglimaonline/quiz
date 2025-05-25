@@ -30,11 +30,11 @@ const questions: QuestionModel[] = [
     AnswerModel.wrongAnswer('Quinta justa'),
     AnswerModel.rightAnswer('Quarta justa'),
   ]),
-  new QuestionModel(305, 'Qual é a formação de um acorde maior?', [
-    AnswerModel.wrongAnswer('1ª – 3ª menor – 5ª diminuta'),
-    AnswerModel.wrongAnswer('1ª – 3ª menor – 5ª justa'),
-    AnswerModel.wrongAnswer('1ª – 4ª – 5ª'),
-    AnswerModel.rightAnswer('1ª – 3ª maior – 5ª justa'),
+  new QuestionModel(305, 'Quantos sustenidos tem a escala de Ré maior?', [
+    AnswerModel.wrongAnswer('1 sustenido'),
+    AnswerModel.wrongAnswer('3 sustenidos'),
+    AnswerModel.wrongAnswer('4 sustenidos'),
+    AnswerModel.rightAnswer('2 sustenidos'),
   ]),
   new QuestionModel(306, 'Qual é o 6º grau no campo harmônico de Sol maior?', [
     AnswerModel.wrongAnswer('Am'),

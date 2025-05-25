@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import QuestionCounter from '@/components/questionCounter'
 
-const BASE_URL = 'https://quiz-chi-ruby.vercel.app/api'
+// const BASE_URL = 'https://quiz-chi-ruby.vercel.app/api'
+const BASE_URL = 'http://localhost:3000/api'
 const TIME_TO_ANSWER = 15
 
 export default function Home() {
