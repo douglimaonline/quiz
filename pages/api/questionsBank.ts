@@ -38,7 +38,7 @@ const questions: QuestionModel[] = [
       AnswerModel.rightAnswer('Rio Amazonas'),
     ]
   ),
-  new QuestionModel(301, 'Qual é o maior planeta do sistema solar?', [
+  new QuestionModel(305, 'Qual é o maior planeta do sistema solar?', [
     AnswerModel.wrongAnswer('Terra'),
     AnswerModel.wrongAnswer('Marte'),
     AnswerModel.wrongAnswer('Vênus'),
@@ -60,7 +60,7 @@ const questions: QuestionModel[] = [
       AnswerModel.rightAnswer('Rio de Janeiro'),
     ]
   ),
-  new QuestionModel(315, 'Quem foi o primeiro homem a pisar na Lua?', [
+  new QuestionModel(308, 'Quem foi o primeiro homem a pisar na Lua?', [
     AnswerModel.wrongAnswer('Buzz Aldrin'),
     AnswerModel.wrongAnswer('Yuri Gagarin'),
     AnswerModel.wrongAnswer('Michael Collins'),
@@ -92,7 +92,7 @@ const questions: QuestionModel[] = [
       AnswerModel.rightAnswer('Baião de dois'),
     ]
   ),
-  new QuestionModel(310, 'Quem pintou a obra "A Última Ceia"?', [
+  new QuestionModel(312, 'Quem pintou a obra "A Última Ceia"?', [
     AnswerModel.wrongAnswer('Michelangelo'),
     AnswerModel.wrongAnswer('Rafael'),
     AnswerModel.wrongAnswer('Van Gogh'),
@@ -104,13 +104,13 @@ const questions: QuestionModel[] = [
     AnswerModel.wrongAnswer('Escritor'),
     AnswerModel.rightAnswer('Piloto de Fórmula 1'),
   ]),
-  new QuestionModel(302, 'Qual é a nota que vem depois de Sol?', [
+  new QuestionModel(314, 'Qual é a nota que vem depois de Sol?', [
     AnswerModel.wrongAnswer('Si'),
     AnswerModel.wrongAnswer('Mi'),
     AnswerModel.wrongAnswer('Dó'),
     AnswerModel.rightAnswer('Lá'),
   ]),
-  new QuestionModel(311, 'Quantos estados tem o Brasil?', [
+  new QuestionModel(315, 'Quantos estados tem o Brasil?', [
     AnswerModel.wrongAnswer('25'),
     AnswerModel.wrongAnswer('28'),
     AnswerModel.wrongAnswer('26 e 1 território'),
